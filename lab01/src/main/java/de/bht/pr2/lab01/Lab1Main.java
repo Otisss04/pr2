@@ -46,6 +46,7 @@ public class Lab1Main {
       // ... and try to create a Student object
       Student student = new Student(datenZeile);
       students.add(student);
+      //Try Catch Block!!
     }
 
     // Print all students which could be parsed

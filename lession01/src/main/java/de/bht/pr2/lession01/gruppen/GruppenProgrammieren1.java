@@ -1,5 +1,6 @@
 package de.bht.pr2.lession01.gruppen;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GruppenProgrammieren1 {
@@ -12,9 +13,13 @@ public class GruppenProgrammieren1 {
     System.out.println("Schoenen guten Tag!");
     System.out.print("Was ist Ihre Lieblingsnummer heute?");
 
-    int lieblingsnummer = tastatur.nextInt();
-    System.out.println(lieblingsnummer + " ist eine schoene Zahl.");
-
+    try {
+      int lieblingsnummer = tastatur.nextInt();
+      System.out.println(lieblingsnummer + " ist eine schoene Zahl.");
+    } catch (InputMismatchException e) {
+      System.out.println("Falsche Eingabe des Benutzers!");
+      System.out.println(e);
+    }
     tastatur.close();
   }
 }

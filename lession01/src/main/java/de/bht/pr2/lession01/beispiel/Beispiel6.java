@@ -24,7 +24,7 @@ public class Beispiel6 {
       System.out.println();
 
       System.out.println("----- toString() -----");
-      System.out.println(e); // toString()-Methode aufgerufen
+      System.out.println(e); // toString()-Methode aufgerufen; standardmäßig toString() bei println
       System.out.println();
 
       System.out.println("----- printStackTrace() -----");

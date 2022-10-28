@@ -21,6 +21,18 @@ public class Student {
    * @param dataRow a comma-separated row describing a student object
    */
   public Student(String dataRow) {
-    // TODO: Here goes your code ...
+    {
+      String[] dataRowArray = dataRow.split(",");
+      if (dataRowArray.length != 4) {
+        throw new StudentParseException("Not enough data in dataRowArray: " + dataRow + ".");
+      }
+      name = dataRowArray[0];
+      try {
+        registrationNumber = Integer.parseInt(dataRowArray[1]);
+      } catch (NumberFormatException e) {
+        throw new RegistrationNumberException("No valid RN data in:" + dataRow + ".");
+      }
+      //System.out.println(dataRowArray);
+    }
   }
 }
