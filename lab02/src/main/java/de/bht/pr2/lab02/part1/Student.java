@@ -42,7 +42,7 @@ public class Student {
       throw new StudentParseException("Wrong tuition paid in data: '" + data + "'.");
     }
 
-    int toBePaid = TUITION_FEE - tuitionPaid;
+    double toBePaid = TUITION_FEE - tuitionPaid;
     if (toBePaid > 0) {
       throw new NotPaidTuitionFeeException(
           "Student still has to pay " + toBePaid + " € tuition fee.");
