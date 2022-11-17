@@ -2,9 +2,9 @@ package de.bht.pr2.lab02.part1;
 
 public class Student {
 
-  public static final int TUITION_FEE = 312;
+  public static final double TUITION_FEE = 312.00;
   private String name = "";
-  private int registrationNumber = 0;
+  private double registrationNumber = 0.00;
   private String courseOfStudies = "";
 
   public Student(String data)
@@ -35,18 +35,19 @@ public class Student {
           "Course of studies \"" + courseOfStudies + "\" does not belong to Fachbereich VI.");
     }
 
-    int tuitionPaid = -1;
+    double tuitionPaid;
     try {
-      tuitionPaid = Integer.parseInt(parts[3]);
+      tuitionPaid = Double.parseDouble(parts[3]);
     } catch (NumberFormatException e) {
       throw new StudentParseException("Wrong tuition paid in data: '" + data + "'.");
     }
 
     double toBePaid = TUITION_FEE - tuitionPaid;
-    if (toBePaid > 0) {
+    if (toBePaid > 0 || toBePaid < 0) {
       throw new NotPaidTuitionFeeException(
           "Student still has to pay " + toBePaid + " € tuition fee.");
     }
+
   }
 
   public String getName() {
@@ -57,7 +58,7 @@ public class Student {
     this.name = name;
   }
 
-  public int getRegistrationNumber() {
+  public double getRegistrationNumber() {
     return registrationNumber;
   }
 
