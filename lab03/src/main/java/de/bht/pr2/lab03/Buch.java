@@ -22,4 +22,16 @@ public class Buch {
                 ", edition=" + edition +
                 '}';
     }
+
+    public String getTitel() {
+        return titel;
+    }
+
+    public double getPreis() {
+        return preis;
+    }
+
+    public int getEdition() {
+        return edition;
+    }
 }

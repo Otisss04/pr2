@@ -18,8 +18,11 @@ public class SumPrices {
     Summe Alle:     € 982.28
    */
     List<Buch> buches = ParseBooks.parseBooks();
-    for () {
-
+    double sumAll = 0;
+    for (Buch buch: buches) {
+      sumAll = sumAll + buch.getPreis();
     }
+
+    System.out.println(sumAll);
   }
 }
