@@ -4,7 +4,7 @@ import de.bht.pr2.lab03.store.BookStore;
 import java.util.ArrayList;
 import java.util.List;
 public class ParseBooks {
-    public void parseBooks() {
+    public static List<Buch> parseBooks() {
         List<String> soldBooksData = BookStore.getSoldBooks();
         List<Buch> bookList = new ArrayList<>();
 
@@ -32,5 +32,6 @@ public class ParseBooks {
             }
         }
         System.out.println(bookList);
+        return bookList;
     }
 }
