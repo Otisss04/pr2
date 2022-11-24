@@ -4,7 +4,7 @@ import de.bht.pr2.lab03.store.BookStore;
 import java.util.ArrayList;
 import java.util.List;
 public class ParseBooks {
-    public static void main(String[]args){
+    public void parseBooks() {
         List<String> soldBooksData = BookStore.getSoldBooks();
         List<Buch> bookList = new ArrayList<>();
 
