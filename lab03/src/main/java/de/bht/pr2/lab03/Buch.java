@@ -6,8 +6,20 @@ import java.util.List;
 
 public class Buch {
     protected String titel;
-    protected String typ;
     protected double preis;
     protected int edition;
 
+    public Buch(String titel, double preis, int edition) {
+        this.titel = titel;
+        this.preis = preis;
+        this.edition = edition;
+    }
+    @Override
+    public String toString() {
+        return "Buch{" +
+                "titel='" + titel + '\'' +
+                ", preis=" + preis +
+                ", edition=" + edition +
+                '}';
+    }
 }
