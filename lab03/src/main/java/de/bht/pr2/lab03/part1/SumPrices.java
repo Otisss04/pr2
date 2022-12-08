@@ -1,11 +1,11 @@
 package de.bht.pr2.lab03.part1;
 
 import de.bht.pr2.lab03.Buch;
+import de.bht.pr2.lab03.EBuch;
+import de.bht.pr2.lab03.Hörbuch;
 import de.bht.pr2.lab03.ParseBooks;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class SumPrices {
 
@@ -18,11 +18,26 @@ public class SumPrices {
     Summe Alle:     € 982.28
    */
     List<Buch> buches = ParseBooks.parseBooks();
+    double sumBuch = 0;
+    double sumEbuch = 0;
+    double sumHoerbuch = 0;
     double sumAll = 0;
-    for (Buch buch: buches) {
-      sumAll = sumAll + buch.getPreis();
-    }
 
+    for (Buch buch : buches) {
+      sumAll += buch.getPreis();
+      if (buch instanceof EBuch) {
+        sumEbuch += buch.getPreis();
+      }
+      if (buch instanceof Hörbuch) {
+        sumHoerbuch += buch.getPreis();
+      }
+      if (!(buch instanceof EBuch) && !(buch instanceof Hörbuch)) {
+        sumBuch += buch.getPreis();
+      }
+    }
     System.out.println(sumAll);
+    System.out.println(sumEbuch);
+    System.out.println(sumHoerbuch);
+    System.out.println(sumBuch);
   }
 }

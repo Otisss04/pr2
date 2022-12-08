@@ -14,15 +14,6 @@ public class Buch {
         this.preis = preis;
         this.edition = edition;
     }
-    @Override
-    public String toString() {
-        return "Buch{" +
-                "titel='" + titel + '\'' +
-                ", preis=" + preis +
-                ", edition=" + edition +
-                '}';
-    }
-
     public String getTitel() {
         return titel;
     }
@@ -34,4 +25,14 @@ public class Buch {
     public int getEdition() {
         return edition;
     }
+
+    @Override
+    public String toString() {
+        return "Buch{" +
+                "titel='" + titel + '\'' +
+                ", preis=" + preis +
+                ", edition=" + edition +
+                '}';
+    }
+
 }
