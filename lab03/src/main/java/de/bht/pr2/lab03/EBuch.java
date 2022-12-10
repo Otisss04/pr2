@@ -7,6 +7,9 @@ public class EBuch extends Buch{
         super(titel, preis, edition);
         this.tolinoVersion = tolinoVersion;
     }
+    public String getTolinoVersion() {
+        return tolinoVersion;
+    }
     @Override
     public String toString() {
         return "EBuch{" +

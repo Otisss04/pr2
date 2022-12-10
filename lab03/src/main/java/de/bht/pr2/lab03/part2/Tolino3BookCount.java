@@ -10,15 +10,15 @@ public class Tolino3BookCount {
 
   public static void main(String[] args) {
     List<Buch> buches = ParseBooks.parseBooks();
+    String test = "";
     for (Buch buch:buches) {
       if (buch instanceof EBuch) { //
-        EBuch e = (EBuch) buch;
-        e.getEdition();//downcasting; am besten immer mit if-schleife
-        if (e.getEdition() == Integer.parseInt("3")) {
-          System.out.print(e);
-        }
+        EBuch e = (EBuch) buch;    //downcasting; am besten immer mit if-schleife
+        e.getTolinoVersion();
+        test = String.valueOf(e);
       }
     }
+    System.out.println(test);
   }
     /* Das Ergebnis der Berechnungen sollte sein:
 
