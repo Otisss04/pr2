@@ -11,18 +11,19 @@ public class Tolino3BookCount {
   public static void main(String[] args) {
     List<Buch> buches = ParseBooks.parseBooks();
     String test = "";
-    for (Buch buch:buches) {
-      if (buch instanceof EBuch) { //
-        EBuch e = (EBuch) buch;    //downcasting; am besten immer mit if-schleife
+    int i = 0;
+    for (Buch eBuch : buches) {
+      if (eBuch instanceof EBuch) {
+        EBuch e = (EBuch) eBuch;
         e.getTolinoVersion();
-        test = String.valueOf(e);
+        if (e.getTolinoVersion().contains("3")) {
+          i++;
+        }
       }
     }
-    System.out.println(test);
+    System.out.println(i);
   }
     /* Das Ergebnis der Berechnungen sollte sein:
-
     Anzahl Ebuecher bei Tolino 3: 9
-
      */
 }

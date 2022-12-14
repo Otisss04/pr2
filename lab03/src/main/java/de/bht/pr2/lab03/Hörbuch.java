@@ -8,6 +8,10 @@ public class Hörbuch extends Buch{
         this.abspielmodus = abspielmodus;
     }
 
+    public String getAbspielmodus() {
+        return abspielmodus;
+    }
+
     @Override
     public String toString() {
         return "Hörbuch{" +

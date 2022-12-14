@@ -7,7 +7,7 @@ import java.util.List;
 public class Buch {
     protected String titel;
     protected double preis;
-    protected int edition;
+    protected int edition; //Auflage
 
     public Buch(String titel, double preis, int edition) {
         this.titel = titel;
