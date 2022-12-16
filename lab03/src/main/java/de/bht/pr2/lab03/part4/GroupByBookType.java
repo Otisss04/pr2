@@ -1,8 +1,11 @@
 package de.bht.pr2.lab03.part4;
 
 import de.bht.pr2.lab03.Buch;
+import de.bht.pr2.lab03.EBuch;
+import de.bht.pr2.lab03.Hörbuch;
 import de.bht.pr2.lab03.ParseBooks;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -12,24 +15,17 @@ public class GroupByBookType {
 
   public static void main(String[] args) {
     List<Buch> buches = ParseBooks.parseBooks();
-    Set<Buch> uniqueBook = new HashSet<>(buches);
+    Set<Buch> uniqueBook = new HashSet<>();
+    Set<EBuch> uniqueEbook = new HashSet<>();
+    Set<Hörbuch> uniqueHörbuch = new HashSet<>();
+
+    Collections.sort(buches);
+
     for (Buch buch : buches) {
-      String ti = buch.getTitel();
-      int ed = buch.getEdition();
-      String all = ti+ed;
-      if (all.equalsIgnoreCase(ti) && all.equalsIgnoreCase(String.valueOf(ed))) { //ti.equals && ed.equals
-        uniqueBook.add(all);
-      }
-      System.out.println("Buch: " +uniqueBook);
+      if (buch instanceof EBuch) uniqueEbook.add((EBuch) buch);
+      else if (buch instanceof Hörbuch) { uniqueHörbuch.add((Hörbuch) buch);
+      }else buches.add(buch);
     }
-    /*String uniqueBook = "";
-    for (Buch buch : buches) {
-      uniqueBook =  buch.getTitel() + buch.getEdition();
-      if (uniqueBook.contains(uniqueBook)) System.out.println("Buch: " + uniqueBook);
-      if (buch instanceof Buch) {
-        Buch b = (Buch) buch;
-        if (b.getEdition().)
-      }*/
     }
     /* Das Ergebnis der Berechnungen sollte sein:
 

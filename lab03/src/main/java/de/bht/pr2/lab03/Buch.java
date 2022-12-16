@@ -4,7 +4,7 @@ import de.bht.pr2.lab03.store.BookStore;
 
 import java.util.List;
 
-public class Buch {
+public class Buch implements Comparable<Buch>{
     protected String titel;
     protected double preis;
     protected int edition; //Auflage
@@ -35,4 +35,12 @@ public class Buch {
                 '}';
     }
 
+    @Override
+    public int compareTo(Buch o) {
+        final int i = this.getTitel().compareTo(o.getTitel());
+        if (i != 0) return i;
+        final int j = Integer.compare(this.getEdition(), o.getEdition());
+        if (j != 0) return j;
+        else return 0;
+    }
 }
