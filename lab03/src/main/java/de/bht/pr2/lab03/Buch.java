@@ -3,6 +3,7 @@ package de.bht.pr2.lab03;
 import de.bht.pr2.lab03.store.BookStore;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Buch implements Comparable<Buch>{
     protected String titel;
@@ -34,6 +35,19 @@ public class Buch implements Comparable<Buch>{
                 ", edition=" + edition +
                 '}';
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Buch book = (Buch) o;
+        return edition == book.edition && Objects.equals(titel, book.titel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titel, edition);
+    }
+
 
     @Override
     public int compareTo(Buch o) {
