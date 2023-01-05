@@ -6,12 +6,12 @@ class CertificateSerdeTest {
 
   @Test
   public void test1() {
+    /* Uncomment
     final Course prog1 = new Course("Programmierung 1", "Medieninformatik");
     final Student siamak = new Student("Siamak", 12345);
     final Subscription siamakProg1 = new Subscription(siamak, prog1);
     final Grade grade = new Grade(siamakProg1, 2.0);
 
-    /* Uncomment
     final Certificate certificate = new Certificate(siamak);
     certificate.addGrade(grade);
 
